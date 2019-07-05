@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   var algoliaSettings = CONFIG.algolia;
-  var isAlgoliaSettingsValid = algoliaSettings.applicationID
+  var isAlgoliaSettingsValid = algoliaSettings.appID
                             && algoliaSettings.apiKey
                             && algoliaSettings.indexName;
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
   }
 
   var search = instantsearch({
-    appId         : algoliaSettings.applicationID,
+    appId         : algoliaSettings.appID,
     apiKey        : algoliaSettings.apiKey,
     indexName     : algoliaSettings.indexName,
     searchFunction: function(helper) {
