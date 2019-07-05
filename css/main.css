@@ -772,7 +772,7 @@ pre .javascript .function {
 .post-body .note h4,
 .post-body .note h5,
 .post-body .note h6 {
-  margin-top: 0;
+  margin-top: 3px;
   margin-bottom: 0;
   border-bottom: initial;
   padding-top: 0 !important;
@@ -793,6 +793,16 @@ pre .javascript .function {
 .post-body .note blockquote:last-child {
   margin-bottom: 0;
 }
+.post-body .note:not(.no-icon) {
+  padding-left: 45px;
+}
+.post-body .note:not(.no-icon):before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  font-size: larger;
+  top: 13px;
+  left: 15px;
+}
 .post-body .note.default {
   border-left-color: #777;
 }
@@ -801,6 +811,10 @@ pre .javascript .function {
 .post-body .note.default h4,
 .post-body .note.default h5,
 .post-body .note.default h6 {
+  color: #777;
+}
+.post-body .note.default:not(.no-icon):before {
+  content: "\f0a9";
   color: #777;
 }
 .post-body .note.primary {
@@ -813,6 +827,10 @@ pre .javascript .function {
 .post-body .note.primary h6 {
   color: #6f42c1;
 }
+.post-body .note.primary:not(.no-icon):before {
+  content: "\f055";
+  color: #6f42c1;
+}
 .post-body .note.info {
   border-left-color: #428bca;
 }
@@ -821,6 +839,10 @@ pre .javascript .function {
 .post-body .note.info h4,
 .post-body .note.info h5,
 .post-body .note.info h6 {
+  color: #428bca;
+}
+.post-body .note.info:not(.no-icon):before {
+  content: "\f05a";
   color: #428bca;
 }
 .post-body .note.success {
@@ -833,6 +855,10 @@ pre .javascript .function {
 .post-body .note.success h6 {
   color: #5cb85c;
 }
+.post-body .note.success:not(.no-icon):before {
+  content: "\f058";
+  color: #5cb85c;
+}
 .post-body .note.warning {
   border-left-color: #f0ad4e;
 }
@@ -843,6 +869,10 @@ pre .javascript .function {
 .post-body .note.warning h6 {
   color: #f0ad4e;
 }
+.post-body .note.warning:not(.no-icon):before {
+  content: "\f06a";
+  color: #f0ad4e;
+}
 .post-body .note.danger {
   border-left-color: #d9534f;
 }
@@ -851,6 +881,10 @@ pre .javascript .function {
 .post-body .note.danger h4,
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
+  color: #d9534f;
+}
+.post-body .note.danger:not(.no-icon):before {
+  content: "\f056";
   color: #d9534f;
 }
 .post-body .tabs {
@@ -879,6 +913,9 @@ pre .javascript .function {
   border-right: 1px solid transparent;
   border-bottom: 1px solid #ddd;
   border-left: 1px solid transparent;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab {
@@ -1503,12 +1540,14 @@ pre .javascript .function {
 }
 .posts-expand .post-tags {
   margin-top: 40px;
-  text-align: center;
 }
 .posts-expand .post-tags a {
   display: inline-block;
   margin-right: 10px;
+  padding: 0px 10px 0px 10px;
   font-size: 13px;
+  border-bottom: none;
+  background: #e9e9e9;
 }
 .post-nav {
   display: table;
@@ -1723,6 +1762,9 @@ pre .javascript .function {
   margin-bottom: 10px;
   border-bottom-color: #555;
   font-size: 13px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 }
 .links-of-author a:before,
 .links-of-author span.exturl:before {
@@ -1733,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #aa4d1c;
+  background: #821f5e;
 }
 .feed-link,
 .chat {
@@ -2646,19 +2688,6 @@ ul.breadcrumb li+li:last-child {
   background: #f9f9f9;
   border-bottom-color: #fff;
 }
-.menu-item-active a:after,
-.menu .menu-item a:hover:after,
-.menu .menu-item span.exturl:hover:after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  margin-top: -3px;
-  right: 15px;
-  width: 6px;
-  height: 6px;
-  background-color: #bbb;
-  border-radius: 50%;
-}
 .menu .menu-item {
   display: block;
   margin: 0;
@@ -2740,9 +2769,6 @@ ul.breadcrumb li+li:last-child {
   background: #fff !important;
   border-bottom-color: #fc6423;
 }
-.sub-menu .menu-item-active a:after {
-  content: initial;
-}
 .use-motion .sidebar .motion-element {
   opacity: 1;
 }
@@ -2821,7 +2847,6 @@ ul.breadcrumb li+li:last-child {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
@@ -2878,9 +2903,7 @@ ul.breadcrumb li+li:last-child {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   margin: 5px 0 0;
-  width: 50%;
   display: inline-block;
-  width: unset;
 }
 .links-of-blogroll-inline .links-of-blogroll-item a,
 .links-of-blogroll-inline .links-of-blogroll-item span.exturl {
