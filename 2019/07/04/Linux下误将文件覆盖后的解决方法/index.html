@@ -16,6 +16,9 @@
 
 <html class="theme-next pisces use-motion" lang>
 <head><meta name="generator" content="Hexo 3.9.0">
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -52,15 +55,33 @@
   
 
   
+    
+      
+    
 
+    
   
 
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Hack Nerd Font:300,300italic,400,400italic,700,700italic|CodeNewRoman Nerd Font:300,300italic,400,400italic,700,700italic|Hack Nerd Font Mono:300,300italic,400,400italic,700,700italic|CodeNewRoman Nerd Font Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -128,7 +149,7 @@
 <meta property="og:site_name" content="Flying McDonald">
 <meta property="og:description" content="事件起因对重定向输出符号 &amp;gt;(覆盖) 和 &amp;gt;&amp;gt;(从最后一行开始追加内容) 错误使用导致文件内容被覆盖(使用 mv 命令覆盖也适用)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T10:47:20.674Z">
+<meta property="og:updated_time" content="2019-07-06T12:55:19.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下误将文件覆盖后的解决方法">
 <meta name="twitter:description" content="事件起因对重定向输出符号 &amp;gt;(覆盖) 和 &amp;gt;&amp;gt;(从最后一行开始追加内容) 错误使用导致文件内容被覆盖(使用 mv 命令覆盖也适用)">
@@ -243,8 +264,6 @@
     
 
     
-      
-    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -260,8 +279,6 @@
       
     
 
-    
-      
     
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我</a>
@@ -279,10 +296,8 @@
     
 
     
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -297,10 +312,8 @@
     
 
     
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -315,10 +328,8 @@
     
 
     
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -453,13 +464,23 @@
                 
               
 
-              <time title="创建时间: 2019-07-04 16:09:17 / 最后一次修改于: 18:47:20" itemprop="dateCreated datePublished" datetime="2019-07-04T16:09:17+08:00">2019-07-04</time>
+              <time title="创建时间: 2019-07-04 16:09:17" itemprop="dateCreated datePublished" datetime="2019-07-04T16:09:17+08:00">2019-07-04</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">编写日期</span>
+                
+                <time title="最后一次修改于: 2019-07-06 20:55:19" itemprop="dateModified" datetime="2019-07-06T20:55:19+08:00">2019-07-06</time>
+              </span>
             
           
 
@@ -492,7 +513,7 @@
               
                 <span class="post-meta-item-text">本文字数: </span>
               
-              <span title="本文字数">1.2k</span>
+              <span title="本文字数">1.3k</span>
             </span>
           
 
@@ -527,8 +548,8 @@
 <a id="more"></a>
 
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>经过查找资料后发现被覆盖的文件内容能够通过 <strong>grep</strong> 与 <strong>dd</strong> 这两个命令来找到  </p>
-<h2 id="开始查找"><a href="#开始查找" class="headerlink" title="开始查找"></a>开始查找</h2><p>首先用 <strong>pwd</strong> 命令确认文件所在的目录(我的是在家目录)， 用 <strong>df -h</strong> 确认文件所在目录挂在哪个磁盘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">udev            3.9G     0  3.9G   0% /dev</span><br><span class="line">tmpfs           787M   18M  770M   3% /run</span><br><span class="line">/dev/sda4       108G   50G   53G  49% /</span><br><span class="line">tmpfs           3.9G   63M  3.8G   2% /dev/shm</span><br><span class="line">tmpfs           5.0M  4.0K  5.0M   1% /run/lock</span><br><span class="line">tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/sda3       512M  5.3M  507M   2% /boot/efi</span><br><span class="line">tmpfs           787M   28K  787M   1% /run/user/1000</span><br></pre></td></tr></table></figure>
+<h2 id="开始查找"><a href="#开始查找" class="headerlink" title="开始查找"></a>开始查找</h2><p>首先用 <strong>pwd</strong> 命令确认文件所在的目录(我的是在/home目录)， 用 <strong>fdisk -h</strong>  确认文件所在目录挂在哪个磁盘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Filesystem      Size    Used   Avail  Use%  Mounted on</span><br><span class="line">udev            3.9G      0    3.9G    0%   /dev</span><br><span class="line">tmpfs           787M     18M   770M    3%   /run</span><br><span class="line">/dev/sda4       108G     50G    53G   49%   /</span><br><span class="line">tmpfs           3.9G     63M   3.8G    2%   /dev/shm</span><br><span class="line">tmpfs           5.0M    4.0K   5.0M    1%   /run/lock</span><br><span class="line">tmpfs           3.9G       0   3.9G    0%   /sys/fs/cgroup</span><br><span class="line">/dev/sda3       512M    5.3M   507M    2%   /boot/efi</span><br><span class="line">tmpfs           787M     28K   787M    1%   /run/user/1000</span><br></pre></td></tr></table></figure>
 
 <p>因为我用的是整个磁盘做的/目录(图方便)，所以可以看到我的/目录挂在 <strong>/dev/sda4</strong> 上。然后用使用 <strong>grep -a -b</strong> 命令在磁盘上通过文件内容中比较有代表性的字符串(字符串越长搜索结果越准确)来查找文件所在偏移的位置，并返回部分内容。比如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grep -a -b 'echo "YYFNB"' /dev/sda4</span><br></pre></td></tr></table></figure>
