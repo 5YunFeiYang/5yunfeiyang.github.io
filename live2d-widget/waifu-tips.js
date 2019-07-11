@@ -116,7 +116,7 @@ function initWidget(waifuPath = "/waifu-tips.json", apiPath = "") {
 	var userAction = false,
 		hitokotoTimer = null,
 		messageTimer = null,
-		messageArray = ["已经过了这么久了呀，日子过得好快呢……", "使用Chrome可以获得最佳浏览体验哦！", "嗨～快来逗我玩吧！", "拿小拳拳锤你胸口！"];
+		messageArray = ["星空之所以美丽,就是因为在无尽的宇宙中,不管黑暗如何蔓延,都会有星星的光芒把它照亮,人生也是如此,有绝望的地方,就会有希望产生.", "相信奇迹的人,本身就像奇迹一样了不起.", "在米龙的背后,自由的活下去.", "如果黑洞能够吞噬一千亿个太阳,那我就是那一千零一个."];
 	if ($(".fa-share-alt").is(":hidden")) messageArray.push("记得把小家加入Adblock白名单哦！");
 	$(document).mousemove(function() {
 		userAction = true;

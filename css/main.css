@@ -1146,7 +1146,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Hack Nerd Font Mono', 'Hack Nerd Font', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Hack Nerd Font', 'Hack Nerd Font', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1857,7 +1857,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #59ff79;
+  background: #28f2ff;
 }
 .feed-link,
 .chat {
@@ -3055,14 +3055,32 @@ ul.breadcrumb li+li:last-child {
   text-overflow: ellipsis;
 }
 .content-wrap {
-  background: rgba(240,240,240,0.4);
+  background: rgba(255,255,255,0.2);
 }
 .header-inner {
   background: rgba(227,230,231,0.5);
+  border: 1px solid #e3e6e7;
+  border-top: 0px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .sidebar-inner {
   background: rgba(235,235,235,0.5);
+  border: 1px solid #ebebeb;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .sidebar {
   background: rgba(255,255,255,0);
+}
+.menu .menu-item a:hover,
+.menu-item-active a {
+  background: rgba(250,250,250,0.6);
+  border-bottom-color: rgba(250,250,250,0.6);
+}
+.post {
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
