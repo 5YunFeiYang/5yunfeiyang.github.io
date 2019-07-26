@@ -312,6 +312,22 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-pdf">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/PDF/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>文档</a>
+
+  </li>
 
       
       
@@ -382,6 +398,9 @@
             
 
     
+    
+      
+      
     
       
       
@@ -470,11 +489,15 @@
                   
                 
               
-              目前共计 8 个标签
+                
+                  
+                
+              
+              目前共计 9 个标签
             </div>
             <div class="tag-cloud-tags">
               
-                <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/java/" style="font-size: 12px; color: #ccc">java</a> <a href="/tags/ssm框架/" style="font-size: 12px; color: #ccc">ssm框架</a> <a href="/tags/其它/" style="font-size: 12px; color: #ccc">其它</a> <a href="/tags/博客/" style="font-size: 12px; color: #ccc">博客</a> <a href="/tags/技术学习/" style="font-size: 12px; color: #ccc">技术学习</a> <a href="/tags/文件管理/" style="font-size: 12px; color: #ccc">文件管理</a> <a href="/tags/踩坑系列/" style="font-size: 12px; color: #ccc">踩坑系列</a>
+                <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/java/" style="font-size: 30px; color: #111">java</a> <a href="/tags/jsp/" style="font-size: 12px; color: #ccc">jsp</a> <a href="/tags/ssm框架/" style="font-size: 12px; color: #ccc">ssm框架</a> <a href="/tags/其它/" style="font-size: 12px; color: #ccc">其它</a> <a href="/tags/博客/" style="font-size: 12px; color: #ccc">博客</a> <a href="/tags/技术学习/" style="font-size: 12px; color: #ccc">技术学习</a> <a href="/tags/文件管理/" style="font-size: 12px; color: #ccc">文件管理</a> <a href="/tags/踩坑系列/" style="font-size: 12px; color: #ccc">踩坑系列</a>
               
             </div>
           </div>
@@ -541,7 +564,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -564,7 +587,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -597,7 +622,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -924,6 +951,32 @@
   
 
   
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '690px'
+        });
+      });
+    },
+  });
+}
+</script>
+
 
   
 
