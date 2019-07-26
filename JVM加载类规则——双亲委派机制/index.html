@@ -118,16 +118,20 @@
 
 
 
-  <meta name="description" content="相信奇迹的人,本身就像奇迹————麦当">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Flying McDonald">
-<meta property="og:url" content="http://flyingmcdonald.github.io/tags/踩坑系列/index.html">
+  <meta name="description" content="在JVM中，加载类，需要遵守双亲委派机制…">
+<meta name="keywords" content="java,jvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM加载类规则——双亲委派机制">
+<meta property="og:url" content="http://flyingmcdonald.github.io/JVM加载类规则——双亲委派机制/index.html">
 <meta property="og:site_name" content="Flying McDonald">
-<meta property="og:description" content="相信奇迹的人,本身就像奇迹————麦当">
+<meta property="og:description" content="在JVM中，加载类，需要遵守双亲委派机制…">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-07-26/01.png">
+<meta property="og:updated_time" content="2019-07-26T10:05:01.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flying McDonald">
-<meta name="twitter:description" content="相信奇迹的人,本身就像奇迹————麦当">
+<meta name="twitter:title" content="JVM加载类规则——双亲委派机制">
+<meta name="twitter:description" content="在JVM中，加载类，需要遵守双亲委派机制…">
+<meta name="twitter:image" content="http://flyingmcdonald.github.io/blogImg/19-07-26/01.png">
 
 
 
@@ -135,7 +139,7 @@
 
   
   
-  <link rel="canonical" href="http://flyingmcdonald.github.io/tags/踩坑系列/">
+  <link rel="canonical" href="http://flyingmcdonald.github.io/JVM加载类规则——双亲委派机制/">
 
 
 
@@ -145,7 +149,7 @@
   };
 </script>
 
-  <title>标签: 踩坑系列 | Flying McDonald</title>
+  <title>JVM加载类规则——双亲委派机制 | Flying McDonald</title>
   
 
 
@@ -193,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,7 +271,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -396,86 +400,280 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>踩坑系列<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://flyingmcdonald.github.io/JVM加载类规则——双亲委派机制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Flying McDonald">
+      <meta itemprop="description" content="相信奇迹的人,本身就像奇迹<br>————麦当<星游记>">
+      <meta itemprop="image" content="/blogImg/flying-md.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying McDonald">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/SSM项目踩坑系列-一/" itemprop="url">
-            
-              <span itemprop="name">SSM项目踩坑系列(一)</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JVM加载类规则——双亲委派机制
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-19T23:20:37+08:00" content="2019-07-19">
-          07-19
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-26 17:22:54 / 修改时间：18:05:01" itemprop="dateCreated datePublished" datetime="2019-07-26T17:22:54+08:00">2019-07-26</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">399</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">1 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在JVM中，加载类，需要遵守双亲委派机制…</p>
+<a id="more"></a>
+
+<h4 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h4><ul>
+<li><p>在加载类时，应用类加载器首先执行加载，但不是立即加载，而是委派给父类加载器——扩展类加载器进行加载。</p>
+</li>
+<li><p>而扩展类加载器也不是立即加载，而是继续委派给父类加载器——启动类加载器进行加载。</p>
+</li>
+<li><p>如果启动类加载器能够加载，则直接加载使用；如果不能加载，则抛异常；</p>
+</li>
+<li><p>这时，扩展类加载器继续加载，如果能够加载，则直接加载使用；如果不能加载，则抛异常；</p>
+</li>
+<li><p>这时，应用类加载器继续加载，如果能够加载，则直接加载使用；如果不能加载，则抛异常；最终显示找不到类异常（ClassNotFoundException）。</p>
+</li>
+</ul>
+<h4 id="加载器位置"><a href="#加载器位置" class="headerlink" title="加载器位置"></a>加载器位置</h4><ul>
+<li><p>启动类加载器：$JRE_HOME/classes目录（classes需手动创建）</p>
+</li>
+<li><p>扩展类加载器：$JRE_HOME/lib/classes目录（classes需手动创建）</p>
+</li>
+<li><p>应用类加载器：可存放到任意目录下</p>
+</li>
+</ul>
+<h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p> <img src="/blogImg/19-07-26/01.png" alt></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Flying McDonald</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://flyingmcdonald.github.io/JVM加载类规则——双亲委派机制/" title="JVM加载类规则——双亲委派机制">http://flyingmcdonald.github.io/JVM加载类规则——双亲委派机制/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/静态包含-动态包含与注释/" rel="next" title="静态包含,动态包含与注释">
+                <i class="fa fa-chevron-left"></i> 静态包含,动态包含与注释
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -495,8 +693,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -639,6 +846,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#双亲委派机制"><span class="nav-text">双亲委派机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载器位置"><span class="nav-text">加载器位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-text">图解</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -821,6 +1045,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -836,6 +1064,37 @@
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '765d7c27909606aedba3',
+    clientSecret: '258acc6e0759f612a4cd7a0d24391bfc676febeb',
+    repo: 'flyingmcdonald.github.io',
+    owner: 'FlyingMcDonald',
+    admin: ['FlyingMcDonald'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
