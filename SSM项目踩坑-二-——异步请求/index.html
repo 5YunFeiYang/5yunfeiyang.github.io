@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="Flying McDonald">
 <meta property="og:description" content="Ajax(Asynchronous Javascript + XML),异步的JavaScript和XML，能在不重新加载整个web页面的前提下刷新数据更改的部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-03T16:07:36.599Z">
+<meta property="og:updated_time" content="2019-08-03T16:24:11.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSM项目踩坑(二)——异步刷新">
 <meta name="twitter:description" content="Ajax(Asynchronous Javascript + XML),异步的JavaScript和XML，能在不重新加载整个web页面的前提下刷新数据更改的部分。">
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-04 00:07:36" itemprop="dateModified" datetime="2019-08-04T00:07:36+08:00">2019-08-04</time>
+                <time title="修改时间：2019-08-04 00:24:11" itemprop="dateModified" datetime="2019-08-04T00:24:11+08:00">2019-08-04</time>
               </span>
             
           
@@ -525,7 +525,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">323</span>
+              <span title="本文字数">2.2k</span>
             </span>
           
 
@@ -537,7 +537,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">4 分钟</span>
             </span>
           
 
@@ -560,13 +560,32 @@
 <a id="more"></a>
 
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li>局部刷新</li>
-<li>优化了浏览器与服务器之间的传输，减少了不必要的数据返回，减少了带宽占用</li>
-<li>ajax引擎在客户端进行，承担部分服务器的工作，减少了服务器端的压力</li>
+<li><p><strong>无刷新更新数据</strong><br>AJAX最大优点就是能在不刷新整个页面的前提下与服务器通信维护数据。这使得Web应用程序更为迅捷地响应用户交互，并避免了在网络上发送那些没有改变的信息，减少用户等待时间，带来非常好的用户体验。</p>
+</li>
+<li><p><strong>异步与服务器通信</strong><br>AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量。</p>
+</li>
+<li><p><strong>前端和后端负载平衡</strong><br>AJAX可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，AJAX的原则是“按需取数据”，可以最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
+</li>
+<li><p><strong>基于标准被广泛支持</strong><br>AJAX基于标准化的并被广泛支持的技术，不需要下载浏览器插件或者小程序，但需要客户允许JavaScript在浏览器上执行。随着Ajax的成熟，一些简化Ajax使用方法的程序库也相继问世。同样，也出现了另一种辅助程序设计的技术，为那些不支持JavaScript的用户提供替代功能。</p>
+</li>
+<li><p><strong>界面与应用分离</strong><br>Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。</p>
+</li>
 </ol>
 <h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>ajax不支持浏览器的back和history按钮</li>
-<li>安全问题，ajax暴露了与服务器交互的细节</li>
+<li><p><strong>AJAX干掉了Back和History功能，即对浏览器机制的破坏</strong><br>在动态更新页面的情况下，用户无法回到前一个页面状态，因为浏览器仅能记忆历史记录中的静态页面。一个被完整读入的页面与一个已经被动态修改过的页面之间的差别非常微妙；用户通常会希望单击后退按钮能够取消他们的前一次操作，但是在Ajax应用程序中，这将无法实现。<br>后退按钮是一个标准的web站点的重要功能，但是它没法和js进行很好的合作。这是Ajax所带来的一个比较严重的问题，因为用户往往是希望能够通过后退来取消前一次操作的。那么对于这个问题有没有办法？答案是肯定的，用过Gmail的知道，Gmail下面采用的Ajax技术解决了这个问题，在Gmail下面是可以后退的，但是，它也并不能改变Ajax的机制，它只是采用的一个比较笨但是有效的办法，即用户单击后退按钮访问历史记录时，通过创建或使用一个隐藏的IFRAME来重现页面上的变更。（例如，当用户在Google Maps中单击后退时，它在一个隐藏的IFRAME中进行搜索，然后将搜索结果反映到Ajax元素上，以便将应用程序状态恢复到当时的状态。）<br>但是，虽然说这个问题是可以解决的，但是它所带来的开发成本是非常高的，并与Ajax框架所要求的快速开发是相背离的。这是Ajax所带来的一个非常严重的问题。<br>一个相关的观点认为，使用动态页面更新使得用户难于将某个特定的状态保存到收藏夹中。该问题的解决方案也已出现，大部分都使用URL片断标识符（通常被称为锚点，即URL中#后面的部分）来保持跟踪，允许用户回到指定的某个应用程序状态。（许多浏览器允许JavaScript动态更新锚点，这使得Ajax应用程序能够在更新显示内容的同时更新锚点。）这些解决方案也同时解决了许多关于不支持后退按钮的争论。</p>
+</li>
+<li><p><strong>AJAX的安全问题</strong><br>AJAX技术给用户带来很好的用户体验的同时也对IT企业带来了新的安全威胁，Ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。Ajax的逻辑可以对客户端的安全扫描技术隐藏起来，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免一些已知的安全弱点，诸如跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等。</p>
+</li>
+<li><p><strong>对搜索引擎支持较弱</strong><br>对搜索引擎的支持比较弱。如果使用不当，AJAX会增大网络数据的流量，从而降低整个系统的性能。</p>
+</li>
+<li><p><strong>破坏程序的异常处理机制</strong><br>至少从目前看来，像Ajax.dll，Ajaxpro.dll这些Ajax框架是会破坏程序的异常机制的。关于这个问题，曾在开发过程中遇到过，但是查了一下网上几乎没有相关的介绍。后来做了一次试验，分别采用Ajax和传统的form提交的模式来删除一条数据……给我们的调试带来了很大的困难。</p>
+</li>
+<li><p><strong>违背URL和资源定位的初衷</strong>。<br>例如，我给你一个URL地址，如果采用了Ajax技术，也许你在该URL地址下面看到的和我在这个URL地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</p>
+</li>
+<li><p><strong>AJAX不能很好支持移动设备</strong>。<br>一些手持设备（如手机、PDA等）现在还不能很好的支持Ajax，比如说我们在手机的浏览器上打开采用Ajax技术的网站时，它目前是不支持的。</p>
+</li>
+<li><p><strong>客户端过肥</strong>，太多客户端代码造成开发上的成本。<br>编写复杂、容易出错 ；冗余代码比较多（层层包含js文件是AJAX的通病，再加上以往的很多服务端代码现在放到了客户端）；破坏了Web的原有标准。 </p>
+</li>
 </ol>
 <h4 id="jQuery中ajax的使用"><a href="#jQuery中ajax的使用" class="headerlink" title="jQuery中ajax的使用"></a>jQuery中ajax的使用</h4><ul>
 <li><p>在jQuery中ajax被封装成一个$.ajax函数，常用参数如下：</p>
@@ -919,7 +938,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">8k</span>
   
 
   
@@ -930,7 +949,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">11 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
   
 </div>
 
