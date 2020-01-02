@@ -126,19 +126,21 @@
 <meta property="og:site_name" content="Flying McDonald">
 <meta property="og:description" content="git的一些基本命令操作以及遇到的一些坑。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/github_1.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/github_2.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/github_3.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/github_4.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/ssh_key_2.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/ssh_key.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/ssh_key_3.png">
-<meta property="og:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/verity_user.png">
-<meta property="og:updated_time" content="2019-10-23T03:32:47.110Z">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/github_1.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/github_2.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/github_3.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/github_4.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/ssh_key_2.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/ssh_key.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/ssh_key_3.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/verify_user.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/pr.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/git命令基本操作/pr_1.png">
+<meta property="og:updated_time" content="2020-01-02T09:09:52.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令基本操作">
 <meta name="twitter:description" content="git的一些基本命令操作以及遇到的一些坑。">
-<meta name="twitter:image" content="http://flyingmcdonald.github.io/blogImg/19-10-22/github_1.png">
+<meta name="twitter:image" content="http://flyingmcdonald.github.io/git命令基本操作/github_1.png">
 
 
 
@@ -485,7 +487,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-23 11:32:47" itemprop="dateModified" datetime="2019-10-23T11:32:47+08:00">2019-10-23</time>
+                <time title="修改时间：2020-01-02 17:09:52" itemprop="dateModified" datetime="2020-01-02T17:09:52+08:00">2020-01-02</time>
               </span>
             
           
@@ -541,7 +543,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.2k</span>
+              <span title="本文字数">2.8k</span>
             </span>
           
 
@@ -553,7 +555,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -590,7 +592,7 @@
 <li><p>安装git工具，这里是Debian安装的方法<code>sudo apt install git</code>（其它系统自行百度<code>git安装教程</code>）</p>
 </li>
 <li><p>创建一个仓库（Create a new repository），进入你的github个人主页并进行观察</p>
-<p><img src="/blogImg/19-10-22/github_1.png" alt><center>点击<code>New</code></center><br><img src="/blogImg/19-10-22/github_2.png" alt><center>点击<code>start a project</code></center><br><img src="/blogImg/19-10-22/github_3.png" alt><center>点击<code>New</code></center><br> 点击之后，看到这个<br><img src="/blogImg/19-10-22/github_4.png" alt></p>
+<p><img src="github_1.png" alt><center>点击<code>New</code></center><br><img src="github_2.png" alt><center>点击<code>start a project</code></center><br><img src="github_3.png" alt><center>点击<code>New</code></center><br> 点击之后，看到这个<br><img src="github_4.png" alt></p>
 <div class="note info">
             <p>按照步骤通常是：仓库名（Repository name）——&gt;仓库描述（Description<code>可选</code>）——&gt;初始化一个README（Initialize this repository with a README<code>创建README 可以让别人更好地了解你的项目</code>）——&gt;创建仓库（Create repository）     </p>
           </div>
@@ -619,7 +621,7 @@
 <ol>
 <li>首先下载ssh，这里还是以Debian为例子<code>sudo apt install ssh</code></li>
 <li>在你的家目录运行<code>ssh-keygen -t rsa -C &quot;your email&quot;</code>然后疯狂回车</li>
-<li>接着你的家目录会新增一个<code>.ssh</code>目录，里面有 <strong><em>id_rsa</em></strong> 和 <strong><em>id_rsa.pub</em></strong> 文件。然后打开github个人主页，找到 <strong><em>setting</em></strong><br><img src="/blogImg/19-10-22/ssh_key_2.png" alt><br><img src="/blogImg/19-10-22/ssh_key.png" alt><br>点击<strong>New SSH Key</strong><br><img src="/blogImg/19-10-22/ssh_key_3.png" alt><br><strong>Title</strong>随便写，<strong>Key</strong>里面填你<code>id_rsa.pub</code>里面的东西。然后运行<code>ssh -T git@github.com</code>，如果出现这个，OK恭喜你成功了。<br><img src="/blogImg/19-10-22/verity_user.png" alt><br>这时候你就可以轻轻松松的不用输入帐号密码了。</li>
+<li>接着你的家目录会新增一个<code>.ssh</code>目录，里面有 <strong><em>id_rsa</em></strong> 和 <strong><em>id_rsa.pub</em></strong> 文件。然后打开github个人主页，找到 <strong><em>setting</em></strong><br><img src="ssh_key_2.png" alt><br><img src="ssh_key.png" alt><br>点击<strong>New SSH Key</strong><br><img src="ssh_key_3.png" alt><br><strong>Title</strong>随便写，<strong>Key</strong>里面填你<code>id_rsa.pub</code>里面的东西。然后运行<code>ssh -T git@github.com</code>，如果出现这个，OK恭喜你成功了。<br><img src="verify_user.png" alt><br>这时候你就可以轻轻松松的不用输入帐号密码了。</li>
 </ol>
 <p><strong>2. HTTPS协议配置全局帐号密码</strong></p>
 <ol>
@@ -629,7 +631,54 @@
 <li>运行<code>git config --global credential.helper store</code></li>
 <li>OK！接下来你只需要在你的项目内输入一次帐号密码即可。</li>
 </ol>
+<h2 id="提交Pull-Requests"><a href="#提交Pull-Requests" class="headerlink" title="提交Pull Requests"></a>提交Pull Requests</h2><ol>
+<li><p>想将项目Fork一份到自己的github上</p>
+</li>
+<li><p>从自己的github中将项目Clone下来</p>
+</li>
+<li><p>在本地仓库新建一个分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b newBranch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换至新分支，并提交代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout newBranch</span><br><span class="line">git add .</span><br><span class="line">git commit -m "1"</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在fork下来的代码仓库上点击<code>New pull requests</code></p>
+</li>
+</ol>
+<p><img src="pr.png" alt="Pull Requests" title="Pull Requests"></p>
+<ol start="6">
+<li>选择上游分支和需要提交到上游分支的分支代码</li>
+</ol>
+<p><img src="pr_1.png" alt="Pull Requests" title="Pull Requests"></p>
+<ol start="7">
+<li>点击create pull requests</li>
+</ol>
+<h2 id="同步上游代码"><a href="#同步上游代码" class="headerlink" title="同步上游代码"></a>同步上游代码</h2><ol>
+<li><p>添加远程上游代码仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream 上游的代码仓库地址</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>fetch上游代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到本地master分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并上游代码在master分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge upstream/master</span><br></pre></td></tr></table></figure>
 
+<p>如果这步出现错误<code>fatal: refusing to merge unrelated histories</code>，则需要在后面加上<code>--allow-unrelated-histories</code></p>
+</li>
+<li><p>git push</p>
+</li>
+</ol>
+<h2 id="gitignore文件不生效的解决方法"><a href="#gitignore文件不生效的解决方法" class="headerlink" title=".gitignore文件不生效的解决方法"></a>.gitignore文件不生效的解决方法</h2><blockquote>
+<p>在提交代码到远程git仓库时，如果你不想将某些文件提交上去，这时候就得使用<code>.gitignore</code>文件了，git能忽略掉此文件中写入的文件名以及一些规则。</p>
+</blockquote>
+<h4 id="gitignore不生效的原因"><a href="#gitignore不生效的原因" class="headerlink" title=".gitignore不生效的原因"></a>.gitignore不生效的原因</h4><blockquote>
+<p>.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的</p>
+</blockquote>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>删除本地缓存(改变成未被追踪状态)，然后再提交：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m ""</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -702,8 +751,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/简历/" rel="prev" title="简历">
-                简历 <i class="fa fa-chevron-right"></i>
+              <a href="/简历/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -812,9 +861,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -869,9 +916,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -946,7 +991,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git是什么玩意儿"><span class="nav-text">Git是什么玩意儿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github是什么玩意儿"><span class="nav-text">Github是什么玩意儿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我该怎么将我的项目托管到Github上呢"><span class="nav-text">我该怎么将我的项目托管到Github上呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这是后面"><span class="nav-text">这是后面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git是什么玩意儿"><span class="nav-text">Git是什么玩意儿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github是什么玩意儿"><span class="nav-text">Github是什么玩意儿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我该怎么将我的项目托管到Github上呢"><span class="nav-text">我该怎么将我的项目托管到Github上呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这是后面"><span class="nav-text">这是后面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交Pull-Requests"><span class="nav-text">提交Pull Requests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步上游代码"><span class="nav-text">同步上游代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore文件不生效的解决方法"><span class="nav-text">.gitignore文件不生效的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gitignore不生效的原因"><span class="nav-text">.gitignore不生效的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -974,7 +1019,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -988,7 +1033,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
   
 
   
@@ -999,7 +1044,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   
 </div>
 

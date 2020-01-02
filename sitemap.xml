@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://flyingmcdonald.github.io/git%E5%91%BD%E4%BB%A4%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2020-01-02T09:09:52.387Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flyingmcdonald.github.io/%E7%AE%80%E5%8E%86/</loc>
+    
+    <lastmod>2019-12-30T11:12:39.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://flyingmcdonald.github.io/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%B1%87%E6%80%BB/</loc>
     
     <lastmod>2019-12-30T04:31:08.023Z</lastmod>
@@ -33,20 +47,6 @@
     <loc>http://flyingmcdonald.github.io/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8ANext%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2019-12-13T06:49:38.929Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flyingmcdonald.github.io/%E7%AE%80%E5%8E%86/</loc>
-    
-    <lastmod>2019-11-11T09:05:42.516Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flyingmcdonald.github.io/git%E5%91%BD%E4%BB%A4%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2019-10-23T03:32:47.110Z</lastmod>
     
   </url>
   
