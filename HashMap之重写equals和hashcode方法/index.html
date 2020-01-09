@@ -118,18 +118,22 @@
 
 
 
-  <meta name="description" content="页面功能 命名参考 页面功能 命名参考 页面功能 命名参考    容器 wrap/container/box 头部 header 加入 joinus   导航 nav 底部 footer 注册 register   滚动 scroll 页面主体 main 新闻 news   主导航 mainnav 内容 content 按钮 button   顶导航 topnav 标签页 tab 服务 se">
-<meta name="keywords" content="css">
+  <meta name="description" content="在学习Java的过程中经常会用到HashMap来储存一些数据，今天在逛论坛中看到一篇关于使用HashMap时什么时候需要重写equals和hashcode方法。仔细研读之后学到许多，特以此记录。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="样式命名参考">
-<meta property="og:url" content="http://flyingmcdonald.github.io/样式命名参考/index.html">
+<meta property="og:title" content="HashMap之重写equals和hashcode方法">
+<meta property="og:url" content="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/index.html">
 <meta property="og:site_name" content="Flying McDonald">
-<meta property="og:description" content="页面功能 命名参考 页面功能 命名参考 页面功能 命名参考    容器 wrap/container/box 头部 header 加入 joinus   导航 nav 底部 footer 注册 register   滚动 scroll 页面主体 main 新闻 news   主导航 mainnav 内容 content 按钮 button   顶导航 topnav 标签页 tab 服务 se">
+<meta property="og:description" content="在学习Java的过程中经常会用到HashMap来储存一些数据，今天在逛论坛中看到一篇关于使用HashMap时什么时候需要重写equals和hashcode方法。仔细研读之后学到许多，特以此记录。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-12T02:50:21.307Z">
+<meta property="og:image" content="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/1.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/2.png">
+<meta property="og:image" content="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/3.png">
+<meta property="og:updated_time" content="2020-01-09T14:14:20.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="样式命名参考">
-<meta name="twitter:description" content="页面功能 命名参考 页面功能 命名参考 页面功能 命名参考    容器 wrap/container/box 头部 header 加入 joinus   导航 nav 底部 footer 注册 register   滚动 scroll 页面主体 main 新闻 news   主导航 mainnav 内容 content 按钮 button   顶导航 topnav 标签页 tab 服务 se">
+<meta name="twitter:title" content="HashMap之重写equals和hashcode方法">
+<meta name="twitter:description" content="在学习Java的过程中经常会用到HashMap来储存一些数据，今天在逛论坛中看到一篇关于使用HashMap时什么时候需要重写equals和hashcode方法。仔细研读之后学到许多，特以此记录。">
+<meta name="twitter:image" content="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/1.png">
 
 
 
@@ -137,7 +141,7 @@
 
   
   
-  <link rel="canonical" href="http://flyingmcdonald.github.io/样式命名参考/">
+  <link rel="canonical" href="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/">
 
 
 
@@ -147,7 +151,7 @@
   };
 </script>
 
-  <title>样式命名参考 | Flying McDonald</title>
+  <title>HashMap之重写equals和hashcode方法 | Flying McDonald</title>
   
 
 
@@ -418,7 +422,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://flyingmcdonald.github.io/样式命名参考/">
+    <link itemprop="mainEntityOfPage" href="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Flying McDonald">
@@ -435,7 +439,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">样式命名参考
+          <h1 class="post-title" itemprop="name headline">HashMap之重写equals和hashcode方法
 
               
             
@@ -461,7 +465,7 @@
                 
               
 
-              <time title="创建时间：2019-09-12 10:06:38 / 修改时间：10:50:21" itemprop="dateCreated datePublished" datetime="2019-09-12T10:06:38+08:00">2019-09-12</time>
+              <time title="创建时间：2020-01-09 20:11:49 / 修改时间：22:14:20" itemprop="dateCreated datePublished" datetime="2020-01-09T20:11:49+08:00">2020-01-09</time>
             </span>
           
 
@@ -480,7 +484,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -515,7 +519,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">483</span>
+              <span title="本文字数">1.4k</span>
             </span>
           
 
@@ -527,7 +531,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -546,122 +550,46 @@
       
 
       
-        <table>
-<thead>
-<tr>
-<th align="center">页面功能</th>
-<th align="center">命名参考</th>
-<th align="center">页面功能</th>
-<th align="center">命名参考</th>
-<th align="center">页面功能</th>
-<th align="center">命名参考</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">容器</td>
-<td align="center">wrap/container/box</td>
-<td align="center">头部</td>
-<td align="center">header</td>
-<td align="center">加入</td>
-<td align="center">joinus</td>
-</tr>
-<tr>
-<td align="center">导航</td>
-<td align="center">nav</td>
-<td align="center">底部</td>
-<td align="center">footer</td>
-<td align="center">注册</td>
-<td align="center">register</td>
-</tr>
-<tr>
-<td align="center">滚动</td>
-<td align="center">scroll</td>
-<td align="center">页面主体</td>
-<td align="center">main</td>
-<td align="center">新闻</td>
-<td align="center">news</td>
-</tr>
-<tr>
-<td align="center">主导航</td>
-<td align="center">mainnav</td>
-<td align="center">内容</td>
-<td align="center">content</td>
-<td align="center">按钮</td>
-<td align="center">button</td>
-</tr>
-<tr>
-<td align="center">顶导航</td>
-<td align="center">topnav</td>
-<td align="center">标签页</td>
-<td align="center">tab</td>
-<td align="center">服务</td>
-<td align="center">service</td>
-</tr>
-<tr>
-<td align="center">子导航</td>
-<td align="center">subnav</td>
-<td align="center">版权</td>
-<td align="center">copyright</td>
-<td align="center">注释</td>
-<td align="center">note</td>
-</tr>
-<tr>
-<td align="center">菜单</td>
-<td align="center">menu</td>
-<td align="center">登录</td>
-<td align="center">login</td>
-<td align="center">提示信息</td>
-<td align="center">msg</td>
-</tr>
-<tr>
-<td align="center">子菜单</td>
-<td align="center">submenu</td>
-<td align="center">列表</td>
-<td align="center">list</td>
-<td align="center">标题</td>
-<td align="center">title</td>
-</tr>
-<tr>
-<td align="center">子菜单内容</td>
-<td align="center">subMenuContent</td>
-<td align="center">侧边栏</td>
-<td align="center">sidebar</td>
-<td align="center">指南</td>
-<td align="center">guide</td>
-</tr>
-<tr>
-<td align="center">标志</td>
-<td align="center">logo</td>
-<td align="center">搜索</td>
-<td align="center">search</td>
-<td align="center">下载</td>
-<td align="center">download</td>
-</tr>
-<tr>
-<td align="center">广告</td>
-<td align="center">banner</td>
-<td align="center">图标</td>
-<td align="center">icon</td>
-<td align="center">状态</td>
-<td align="center">status</td>
-</tr>
-<tr>
-<td align="center">页面中部</td>
-<td align="center">mainbody</td>
-<td align="center">表格</td>
-<td align="center">table</td>
-<td align="center">投票</td>
-<td align="center">vote</td>
-</tr>
-<tr>
-<td align="center">小技巧</td>
-<td align="center">tips</td>
-<td align="center">列定义</td>
-<td align="center">column_1of3</td>
-<td align="center">友情链接</td>
-<td align="center">friendlink</td>
-</tr>
-</tbody></table>
+        <p>在学习Java的过程中经常会用到<code>HashMap</code>来储存一些数据，今天在逛论坛中看到一篇关于使用<code>HashMap</code>时什么时候需要重写<code>equals</code>和<code>hashcode</code>方法。仔细研读之后学到许多，特以此记录。</p>
+<a id="more"></a>
+
+<hr>
+<p>先上一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Key</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Key</span><span class="params">(Integer id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WithoutHashcode</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//new两个对象key1，key2</span></span><br><span class="line">        Key key1 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Key key2 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Map&lt;Key, String&gt; map = <span class="keyword">new</span> HashMap&lt;Key, String&gt;();</span><br><span class="line">        map.put(key1, <span class="string">"123"</span>);</span><br><span class="line">        String str = map.get(key2);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在上面我定义了一个<code>Key</code>类，里面有一个<code>id</code>属性和它的<code>get</code>方法以及一个构造方法。</li>
+<li>在<code>main</code>方法中，我<code>new</code>了两个对象(对象只能靠new，Orzzz) <code>key1</code>和<code>key2</code>，并将它们的<code>id</code>都赋为1，这就相当于我有两把一模一样的钥匙，它们都能锁住或打开同一扇门。</li>
+<li>现在，我将<code>key1</code>放进 <code>HashMap</code>中相当于我用<code>key1</code>这把钥匙把门锁了。</li>
+<li>然后，我想用<code>key2</code>去开锁，去得到<code>Value</code>。</li>
+</ul>
+<p>让我们运行一下这段代码，看看是否能拿到<code>Value</code></p>
+<p><img src="1.png" alt="运行结果" title="运行结果"></p>
+<p>从上面的运行结果来看，<code>key2</code>并没有成功将锁打开。</p>
+<p>原因有两个：一是没有重写<code>equals</code>方法，二是没有重写<code>hashcode</code>方法。</p>
+<p>我们都知道，<code>HashMap</code>无论是用<code>put</code>还是<code>get</code>都会得到<code>Key</code>（这里的Key为键值对中的键）的<code>hash</code>值</p>
+<p>当我们将<code>key1</code>放入<code>HashMap</code>时，在HashMap里会调用这么一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h;</span><br><span class="line">        <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码中的<code>key</code>可以看作是<code>key1</code>，这段代码会调用<code>key1</code>对象中的<code>hashcode()</code>，而在我们的<code>Key</code>类中，我们并没有重写<code>hashcode()</code>，因此在这调用的是<code>Object</code>类中的<code>hashcode()</code>（Object类是所有类的父类），但在<code>Object</code>类的<code>hashcode</code>方法返回的<code>hash</code>值其实是<code>key1</code>对象的<code>内存地址</code></p>
+<p>而我们在用<code>map.get(key2)</code>时会再次调用上面的代码，得到的是<code>key2</code>的内存地址，由于<code>key1</code>，<code>key2</code>是两个不同的对象，所以它们的<code>内存地址</code>肯定不会相同，所得到的<code>hash</code>值亦不相同，这就是我们无法用<code>key2</code>去拿<code>key1</code>的<code>Value</code>的原因。</p>
+<p>好了，知道了原因，我们再来看一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Key</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Key</span><span class="params">(Integer id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id.hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WithoutHashcode</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Key key1 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Key key2 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Map&lt;Key, String&gt; map = <span class="keyword">new</span> HashMap&lt;Key, String&gt;();</span><br><span class="line">        map.put(key1, <span class="string">"123"</span>);</span><br><span class="line">        String str = map.get(key2);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码中我在<code>Key</code>类里重写了<code>hashcode</code>方法，使其返回的<code>hash</code>值为<code>id</code>的<code>hash</code>值，这下<code>key1</code>和<code>key2</code>的<code>hash</code>值一样了让我们来看看运行结果吧</p>
+<p><img src="2.png" alt="运行结果" title="运行结果"></p>
+<p>很可惜，还是<code>null</code>，这又是为什么呢？明明它们的<code>hash</code>值相同。</p>
+<p>这次的原因：没有重写<code>equals</code>方法</p>
+<p>在学习数据结构的时候我们知道<code>HashMap</code>中的<code>Hash表</code>是根据<code>Hash函数</code>来确定将对象存储到某个位置的，所以不可避免会出现计算出某个对象的位置但那个位置又存在值的情况。在这种情况下，<code>HashMap</code>采用<code>链地址法</code>即某个位置存在冲突，那么将会在那个位置上新建一个链表结点，将后一个对象存入新建的结点内。在查找对象的时候，如果发现该对象所在的位置里不是要找的目标，则会沿着链表向下找，直到找到目标。</p>
+<p>那么我们如何确定我们找到了正确的目标呢？当然就是用<code>equals</code>方法了，可是<code>Key</code>类里面并没有定义<code>equals</code>方法，所以用的还是<code>Object</code>类中的<code>equals</code>方法，但<code>Object</code>类中固有的<code>equals</code>方法比较的是两个对象的内存地址，所以<code>key1</code>和<code>key2</code>又肯定不会相等。这就是为什么重写了<code>hashcode</code>方法还是得到<code>null</code>的原因。</p>
+<p>好了，现在让我们来看看完整版的代码吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Key</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Key</span><span class="params">(Integer id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || !(o <span class="keyword">instanceof</span> Key))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>   ;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.getId().equals(((Key) o).getId());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id.hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WithoutHashcode</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Key key1 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Key key2 = <span class="keyword">new</span> Key(<span class="number">1</span>);</span><br><span class="line">        Map&lt;Key, String&gt; map = <span class="keyword">new</span> HashMap&lt;Key, String&gt;();</span><br><span class="line">        map.put(key1, <span class="string">"123"</span>);</span><br><span class="line">        String str = map.get(key2);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这段代码中我重写了<code>hashcode</code>和<code>equals</code>方法。现在我敢打赌，此次必成功，让我们运行一下</p>
+<p><img src="3.png" alt="运行结果" title="运行结果"></p>
+<p>OK！Success！！！</p>
+<p>最后请记住，在需要用<code>HashMap</code>存储自定义对象时，要重写<code>hashcode</code>和<code>equals</code>方法。</p>
+<p>代码既生活，后会有期：）</p>
 
       
     </div>
@@ -696,7 +624,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://flyingmcdonald.github.io/样式命名参考/" title="样式命名参考">http://flyingmcdonald.github.io/样式命名参考/</a>
+    <a href="http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/" title="HashMap之重写equals和hashcode方法">http://flyingmcdonald.github.io/HashMap之重写equals和hashcode方法/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -712,7 +640,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -725,8 +653,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Java数据结构-广度优先搜索遍历/" rel="next" title="Java数据结构---广度优先搜索遍历">
-                <i class="fa fa-chevron-left"></i> Java数据结构---广度优先搜索遍历
+              <a href="/SSM整合以及配置/" rel="next" title="SSM整合以及配置">
+                <i class="fa fa-chevron-left"></i> SSM整合以及配置
               </a>
             
           </div>
@@ -734,10 +662,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/i3折腾——rofi的奇怪图标/" rel="prev" title="i3折腾——rofi的奇怪图标">
-                i3折腾——rofi的奇怪图标 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
